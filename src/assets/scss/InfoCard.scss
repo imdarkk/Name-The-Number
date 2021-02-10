@@ -1,0 +1,74 @@
+.infoCardWrapper {
+    position: absolute;
+    width: 600px;
+    height: 265px;
+    background-color: #1c1c1c;
+    margin-top: 100px;
+    
+    p {
+        color: white;
+        letter-spacing: .4px;
+        line-height: 1.1;
+    }
+
+    #first {
+        margin-top: 30px;
+    }
+
+    #email {
+        font-family: 'Gilroy';
+        font-size: 22px;
+        margin-top: 44px;
+
+        &:hover {
+            cursor: pointer;
+            color: rgb(196, 196, 196);
+        }
+    }
+}
+
+#closeIcon {
+    display: flex;
+    width: 16px;
+    height: 16px;
+    margin-top: 25px;
+    margin-left: 92%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (max-width: 723px) {
+    .infoCardWrapper {
+        width: 100vw;
+        height: 100vh;
+        margin-top: 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+    
+        #wrapperText {
+            letter-spacing: .3px;
+            line-height: 1px;
+            margin-bottom: 30vh;
+        }
+
+        #email {
+            margin-top: 50px;
+            font-size: 17px;
+        }
+
+        p {
+            font-size: 13px;
+            padding: 0 20px 0 20px;
+        }
+    }
+
+    #closeIcon {
+        margin-top: 32px;
+        margin-left: 80vw;
+    }
+}

@@ -1,0 +1,13 @@
+.wrapperInfo {
+    width: 32px;
+    height: 32px;
+}
+
+#infoIcon {
+    width: 26px;
+    height: 26px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,26 @@
+.wrapperCongrats {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(54px);
+}
+
+#foundText {
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+#againText {
+    color: white;
+    font-size: 22px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}

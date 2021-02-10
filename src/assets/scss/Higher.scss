@@ -1,0 +1,21 @@
+.wrapperHigher {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 250px;
+}
+
+#higherText {
+    position: absolute;
+    font-family: 'Gilroy';
+    font-size: 70px;
+    color: rgb(44, 163, 44);
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 1019px) {
+    #higherText {
+        font-size: 50px;
+    }
+}

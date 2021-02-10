@@ -1,0 +1,161 @@
+.wrapperInput {
+  position: absolute;
+  width: 30vw;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+#labelInput {
+  position: absolute;
+  margin-left: 40px;
+  color: white;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    cursor: text;
+  }
+}
+
+#userInput {
+  width: 26vw;
+  height: 70px;
+  border: 3px solid #36d8bb;
+  background: transparent;
+  color: white;
+  border-radius: 360px 0 0 360px;
+  padding-left: 40px;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+
+  &:focus {
+    color: white;
+    outline: none;
+
+    + #labelInput {
+      margin-top: -80px;
+      background-color: #232c37;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+
+  &:valid {
+    + #labelInput {
+      margin-top: -80px;
+      background-color: #232c37;
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+  }
+}
+
+#sendBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 120px;
+  height: 72px;
+  border: 3px solid #36d8bb;
+  background-color: #36d8bb;
+  border-radius: 360px;
+  margin-left: 26vw;
+  overflow: hidden;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#sendImg {
+  width: 28px;
+  height: 28px;
+}
+
+#sendImgAnimation {
+  width: 28px;
+  height: 28px;
+  animation-duration: 0.5s;
+  animation-name: flyBy;
+  animation-iteration-count: no-repeat;
+}
+
+@keyframes flyBy {
+  from {
+    transform: translateX(0px);
+  }
+  30% {
+    transform: translateX(100px);
+  }
+  60% {
+    transform: translateY(120px);
+  }
+  80% {
+    transform: translateX(-150px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
+
+@media only screen and (max-width: 1019px) {
+  .wrapperInput {
+    width: 100%;
+    justify-content: center;
+    margin-left: -28px;
+  }
+  #userInput {
+    width: 58vw;
+    height: 45px;
+  }
+  #sendBtn {
+    margin-left: 65vw;
+    width: 80px;
+    height: 47px;
+  }
+  #sendImg {
+    width: 20px;
+    height: 20px;
+  }
+  #sendImgAnimation {
+    width: 20px;
+    height: 20px;
+  }
+  #labelInput {
+    font-size: 14px;
+    margin-left: -42vw;
+  }
+
+  #userInput {
+    &:focus {
+      + #labelInput {
+        margin-top: -55px;
+      }
+    }
+
+    &:valid {
+      + #labelInput {
+        margin-top: -55px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 731px) {
+  #labelInput {
+    margin-left: -34vw;
+  }
+}
+
+@media only screen and (max-width: 512px) {
+  #labelInput {
+    margin-left: -24vw;
+  }
+}

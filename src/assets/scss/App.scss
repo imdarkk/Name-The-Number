@@ -1,0 +1,47 @@
+$bgColor: #232c37;
+
+body {
+  background-color: $bgColor;
+}
+
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+#wrapperActions {
+  position: absolute;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+#infoWrapper {
+  width: 100vw;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-right: 40px;
+}
+
+#cardWrapper {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: #00000044;
+}
+
+@media only screen and (max-width: 550px){
+  #infoWrapper {
+    margin-top: 30px;
+    margin-right: 30px;
+  }
+}
