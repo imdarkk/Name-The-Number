@@ -9,6 +9,37 @@ function InputNum(props) {
   const [errorShow, setErrorShow] = useState(false);
   const [error, setError] = useState("");
 
+  const checkNumbers = () => {
+    if (props.num != undefined) {
+      setErrorShow(false);
+      setError("");
+      setFly(true);
+      setTimeout(() => {
+        setFly(false);
+      }, 600);
+      props.setCompare(props.num);
+
+      if (props.num != props.compareNum) {
+        props.setTries(props.tries - 1);
+      }
+    }
+
+    if (props.num == undefined || isNaN(props.num) || props.num == "") {
+      setErrorShow(true);
+      setError("Please enter a number");
+    }
+
+    if (props.num < 0) {
+      setErrorShow(true);
+      setError("Please enter a number higher than or equal to 0");
+    }
+
+    if (props.num > 100) {
+      setErrorShow(true);
+      setError("Please enter a number lower than or equal to 100");
+    }
+  };
+
   return (
     <div className="wrapperInput">
       <input
@@ -18,34 +49,7 @@ function InputNum(props) {
         autoComplete="off"
         onKeyDown={(event) => {
           if (event.key === "Enter") {
-            if (props.num != undefined) {
-              setErrorShow(false);
-              setError("");
-              setFly(true);
-              setTimeout(() => {
-                setFly(false);
-              }, 600);
-              props.setCompare(props.num);
-
-              if (props.num != props.compareNum) {
-                props.setTries(props.tries - 1);
-              }
-            }
-
-            if (props.num == undefined || isNaN(props.num) || props.num == "") {
-              setErrorShow(true);
-              setError("Please enter a number");
-            }
-
-            if (props.num < 0) {
-              setErrorShow(true);
-              setError("Please enter a number higher than or equal to 0");
-            }
-
-            if (props.num > 100) {
-              setErrorShow(true);
-              setError("Please enter a number lower than or equal to 100");
-            }
+            checkNumbers()
           }
         }}
         value={props.num}
@@ -64,34 +68,7 @@ function InputNum(props) {
         type="submit"
         id="sendBtn"
         onClick={() => {
-          if (props.num != undefined) {
-            setErrorShow(false);
-            setError("");
-            setFly(true);
-            setTimeout(() => {
-              setFly(false);
-            }, 600);
-            props.setCompare(props.num);
-
-            if (props.num != props.compareNum) {
-              props.setTries(props.tries - 1);
-            }
-          }
-
-          if (props.num == undefined || isNaN(props.num) || props.num == "") {
-            setErrorShow(true);
-            setError("Please enter a number");
-          }
-
-          if (props.num < 0) {
-            setErrorShow(true);
-            setError("Please enter a number higher than or equal to 0");
-          }
-
-          if (props.num > 100) {
-            setErrorShow(true);
-            setError("Please enter a number lower than or equal to 100");
-          }
+          checkNumbers();
         }}
       >
         <img src={sendIcon} alt="" id={fly ? "sendImgAnimation" : "sendImg"} />
