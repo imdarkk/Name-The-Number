@@ -24,3 +24,16 @@
         cursor: pointer;
     }
 }
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .wrapperCongrats {
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .wrapperCongrats {
+    background-color: #333333cc;
+  }
+}

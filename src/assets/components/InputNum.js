@@ -10,21 +10,7 @@ function InputNum(props) {
   const [error, setError] = useState("");
 
   const checkNumbers = () => {
-    if (props.num != undefined) {
-      setErrorShow(false);
-      setError("");
-      setFly(true);
-      setTimeout(() => {
-        setFly(false);
-      }, 600);
-      props.setCompare(props.num);
-
-      if (props.num != props.compareNum) {
-        props.setTries(props.tries - 1);
-      }
-    }
-
-    if (props.num == undefined || isNaN(props.num) || props.num == "") {
+    if (props.num != undefined || !(isNaN(props.num)) || props.num != "") {
       setErrorShow(true);
       setError("Please enter a number");
     }
@@ -38,6 +24,20 @@ function InputNum(props) {
       setErrorShow(true);
       setError("Please enter a number lower than or equal to 100");
     }
+
+    if (props.num == undefined || isNaN(props.num) || props.num == "") {
+      setErrorShow(false);
+      setError("");
+      setFly(true);
+      setTimeout(() => {
+        setFly(false);
+      }, 600);
+      props.setCompare(props.num);
+
+      if (props.num != props.compareNum) {
+        props.setTries(props.tries - 1);
+      }
+    }
   };
 
   return (
@@ -48,9 +48,7 @@ function InputNum(props) {
         name="userInput"
         autoComplete="off"
         onKeyDown={(event) => {
-          if (event.key === "Enter") {
-            checkNumbers()
-          }
+          if (event.key === "Enter") checkNumbers();
         }}
         value={props.num}
         onChange={(e) => props.setNum(e.target.valueAsNumber)}
@@ -64,13 +62,7 @@ function InputNum(props) {
           <span id="errorTag">Error:</span> {error}
         </p>
       )}
-      <div
-        type="submit"
-        id="sendBtn"
-        onClick={() => {
-          checkNumbers();
-        }}
-      >
+      <div type="submit" id="sendBtn" onClick={() => checkNumbers()}>
         <img src={sendIcon} alt="" id={fly ? "sendImgAnimation" : "sendImg"} />
       </div>
     </div>
