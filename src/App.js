@@ -5,10 +5,10 @@ import React, { useState, useEffect } from "react";
 import "./assets/scss/App.scss";
 
 //Components
-import Lower from "./assets/components/Lower";
-import Higher from "./assets/components/Higher";
+import Status from "./assets/components/Status";
 import InputNum from "./assets/components/InputNum";
 import Congrats from "./assets/components/Congrats";
+import Fail from "./assets/components/Fail";
 import InfoIcon from "./assets/components/InfoIcon";
 import InfoCard from "./assets/components/InfoCard";
 
@@ -17,6 +17,7 @@ function App() {
   const [userInput, setUserInput] = useState();
   const [randomNumber, setRandomNumber] = useState();
   const [compareNum, setCompareNum] = useState();
+  const [tries, setTries] = useState(5);
 
   //Info Card Props
   const [isHidden, setStatus] = useState(true);
@@ -41,13 +42,23 @@ function App() {
         num={userInput}
         setNum={setUserInput}
         setCompare={setCompareNum}
+        compareNum={compareNum}
+        setTries={setTries}
+        tries={tries}
       />
+      <p id="triesText">
+        <span id="tries">Tries Left: </span>
+        {tries}
+      </p>
       <div id="wrapperActions">
+        {!(compareNum < 0) && compareNum < randomNumber && (
+          <Status classID="higherText" text="Higher" />
+        )}
+        {!(compareNum > 100) && compareNum > randomNumber && (
+          <Status classID="lowerText" text="Lower" />
+        )}
         {compareNum == randomNumber && <Congrats />}
-
-        {compareNum < randomNumber && <Higher />}
-
-        {compareNum > randomNumber && <Lower />}
+        {tries == 0 && <Fail />}
       </div>
 
       {!isHidden && (

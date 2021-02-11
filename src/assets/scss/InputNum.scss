@@ -105,7 +105,30 @@
   }
 }
 
+#errorTag {
+  font-family: 'Gilroy';
+  color: rgb(207, 91, 91);
+  font-size: 20px;
+}
+
+#errorText {
+  color: rgb(207, 91, 91);
+  font-size: 18px;
+  margin-top: 150px;
+  margin-left: -27vw;
+}
+
 @media only screen and (max-width: 1019px) {
+  #errorTag {
+    font-size: 18px;
+  }
+
+  #errorText {
+    position: absolute;
+    margin-left: -30vw;
+    font-size: 16px;
+  }
+
   .wrapperInput {
     width: 100%;
     justify-content: center;
@@ -152,10 +175,22 @@
   #labelInput {
     margin-left: -34vw;
   }
+
+  #errorTag {
+    font-size: 17px;
+  }
+
+  #errorText {
+    margin-left: -35vw;
+    font-size: 15px;
+  }
 }
 
 @media only screen and (max-width: 512px) {
   #labelInput {
     margin-left: -24vw;
+  }
+  #errorText {
+    margin-left: -15vw;
   }
 }
