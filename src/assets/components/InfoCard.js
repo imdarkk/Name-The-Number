@@ -14,13 +14,13 @@ function InfoCard(props) {
         />
         <div id="wrapperText">
           <p id="first">
-            Name the number is a guess the number game created by .
+            Name the number is a guess the number game created by @marios.kyr.
           </p>
           <p>
             To play you have to guess the number. The number is between 1-100
           </p>
           <p>If you find any bugs or have any suggestions contact me at</p>
-          <p id="email"></p>
+          <p id="email">kmarios2005@gmail.com</p>
         </div>
       </div>
     );

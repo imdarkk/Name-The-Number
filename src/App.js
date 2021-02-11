@@ -42,7 +42,7 @@ function App() {
         num={userInput}
         setNum={setUserInput}
         setCompare={setCompareNum}
-        compareNum={compareNum}
+        compareNum={randomNumber}
         setTries={setTries}
         tries={tries}
       />

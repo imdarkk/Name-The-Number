@@ -10,22 +10,7 @@ function InputNum(props) {
   const [error, setError] = useState("");
 
   const checkNumbers = () => {
-    if (props.num != undefined || !(isNaN(props.num)) || props.num != "") {
-      setErrorShow(true);
-      setError("Please enter a number");
-    }
-
-    if (props.num < 0) {
-      setErrorShow(true);
-      setError("Please enter a number higher than or equal to 0");
-    }
-
-    if (props.num > 100) {
-      setErrorShow(true);
-      setError("Please enter a number lower than or equal to 100");
-    }
-
-    if (props.num == undefined || isNaN(props.num) || props.num == "") {
+    if (!(props.num < 0) && !(props.num > 100) && props.num != undefined && props.num != "" && !isNaN(props.num)) {
       setErrorShow(false);
       setError("");
       setFly(true);
@@ -34,9 +19,24 @@ function InputNum(props) {
       }, 600);
       props.setCompare(props.num);
 
-      if (props.num != props.compareNum) {
+      if (props.num !== props.compareNum) {
         props.setTries(props.tries - 1);
       }
+    }
+
+    if (props.num < 0) {
+      setError("Please enter a number higher than or equal to 0");
+      setErrorShow(true);
+    }
+
+    if (props.num > 100) {
+      setError("Please enter a number lower than or equal to 100");
+      setErrorShow(true);
+    }
+
+    if (props.num == undefined || isNaN(props.num) || props.num == "") {
+      setError("Please enter a number");
+      setErrorShow(true);
     }
   };
 

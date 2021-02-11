@@ -1,11 +1,11 @@
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../fonts/Gilroy-ExtraBold.woff2')
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-ExtraBold.woff2");
 }
 
 @font-face {
-  font-family: 'Gilroy Light';
-  src: url('../fonts/Gilroy-Light.woff2')
+  font-family: "Gilroy Light";
+  src: url("../fonts/Gilroy-Light.woff2");
 }
 
 $bgColor: #232c37;
@@ -52,7 +52,7 @@ body {
 }
 
 #tries {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-size: 20px;
 }
 
@@ -65,6 +65,12 @@ body {
   transform: translate(-50%, -50%);
 }
 
+@media only screen and (max-height: 446px) {
+  #triesText {
+    top: 60%;
+  }
+}
+
 @media only screen and (max-width: 974px) {
   #triesText {
     left: 78%;
@@ -72,7 +78,19 @@ body {
   }
 }
 
-@media only screen and (max-width: 550px){
+@media only screen and (max-height: 693px) and (max-width: 974px) {
+  #triesText {
+    top: 37%;
+  }
+}
+
+@media only screen and (max-height: 435px) and (max-width: 974px) {
+  #triesText {
+    top: 31%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
   #infoWrapper {
     margin-top: 30px;
     margin-right: 30px;
