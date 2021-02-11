@@ -15,6 +15,39 @@ function InputNum(props) {
         type="number"
         id="userInput"
         name="userInput"
+        autoComplete="off"
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            if (props.num != undefined) {
+              setErrorShow(false);
+              setError("");
+              setFly(true);
+              setTimeout(() => {
+                setFly(false);
+              }, 600);
+              props.setCompare(props.num);
+
+              if (props.num != props.compareNum) {
+                props.setTries(props.tries - 1);
+              }
+            }
+
+            if (props.num == undefined || isNaN(props.num) || props.num == "") {
+              setErrorShow(true);
+              setError("Please enter a number");
+            }
+
+            if (props.num < 0) {
+              setErrorShow(true);
+              setError("Please enter a number higher than or equal to 0");
+            }
+
+            if (props.num > 100) {
+              setErrorShow(true);
+              setError("Please enter a number lower than or equal to 100");
+            }
+          }
+        }}
         value={props.num}
         onChange={(e) => props.setNum(e.target.valueAsNumber)}
         required
@@ -28,6 +61,7 @@ function InputNum(props) {
         </p>
       )}
       <div
+        type="submit"
         id="sendBtn"
         onClick={() => {
           if (props.num != undefined) {
@@ -40,7 +74,7 @@ function InputNum(props) {
             props.setCompare(props.num);
 
             if (props.num != props.compareNum) {
-              props.setTries(props.tries-1)
+              props.setTries(props.tries - 1);
             }
           }
 

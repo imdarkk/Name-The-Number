@@ -5,7 +5,12 @@ function Fail() {
   return (
     <div className="wrapperCongrats">
       <p id="foundText">Failed! You didn't find the number. 👎👎👎</p>
-      <p id="againText" onClick={() => window.location.reload()}>
+      <p
+        id="againText"
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
         Play Again? 🔄
       </p>
     </div>

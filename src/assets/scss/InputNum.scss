@@ -91,14 +91,11 @@
   from {
     transform: translateX(0px);
   }
-  30% {
-    transform: translateX(100px);
+  50% {
+    transform: translateX(200px);
   }
-  60% {
-    transform: translateY(120px);
-  }
-  80% {
-    transform: translateX(-150px);
+  51% {
+    transform: translateX(-250px);
   }
   to {
     transform: translateX(0px);
