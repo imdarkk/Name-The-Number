@@ -30,9 +30,6 @@ function App() {
     setRandomNumber(Math.floor(number));
   }, []);
 
-  console.log(randomNumber);
-  console.log(compareNum);
-
   return (
     <div className="App">
       <div id="infoWrapper">
